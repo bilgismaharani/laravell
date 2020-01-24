@@ -164,6 +164,20 @@ Route::get('testmodel/6',function()
     return $post;
 });
 
+Route::get('guruu',function(){
+    $data = App\Guru::select('nik','nama','pelajaran')
+    ->first();
+    return $data;
+});
+
+Route::get('tiga',function()
+{
+    //select * from posts
+    $query = App\Guru::all()
+    ->take(3);
+    ;
+    return $data;
+});
 
 
 
