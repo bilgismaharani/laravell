@@ -179,5 +179,30 @@ Route::get('tiga',function()
     return $data;
 });
 
+Route::get('/',function(){
+    return view('welcome');
+});
+
+Route::get('latihan','LatihanController@halo');
+Route::get('tambah/{a?}/{b?}','LatihanController@tambah');
+Route::get('kurang/{a?}/{b?}','LatihanController@kurang');
+Route::get('kali/{a?}/{b?}','LatihanController@kali');
+Route::get('bagi/{a?}/{b?}','LatihanController@bagi');
+Route::get('pertambahan/{a?}/{b?}','LatihanController@pertambahan');
+Route::get('pengurangan/{a?}/{b?}','LatihanController@pengurangan');
+Route::get('perkalian/{a?}/{b?}','LatihanController@perkalian');
+Route::get('pembagian/{a?}/{b?}','LatihanController@pembagian');
+Route::get('data-1','LatihanController@loop');
+Route::get('data-2','LatihanController@data');
 
 
+//CRUD TABUNGAN
+Route::get('tabungan','TabunganController@index');
+Route::get('tabungan/{id}','TabunganController@show');
+Route::get('tabungan-tambah/{id}/{nis}/{nama}/{kelas}/{jumlah}','TabunganController@store');
+Route::get('tabungan-update/{id}/{nis}/{nama}/{kelas}/{jumlah}','TabunganController@edit');
+
+//Passing Data
+Route::get('pass','PracticeController@pass');
+Route::get('pass1','PracticeController@pass1');
+Route::get('pass-tabungan','PracticeController@pass2');
